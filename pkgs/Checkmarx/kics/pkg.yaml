@@ -1,5 +1,7 @@
 packages:
-  - name: Checkmarx/kics@v1.5.1
+  - name: Checkmarx/kics@v1.5.2
+  - name: Checkmarx/kics
+    version: v1.5.1
   - name: Checkmarx/kics
     version: v1.4.4
   - name: Checkmarx/kics
