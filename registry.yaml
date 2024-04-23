@@ -949,6 +949,7 @@ packages:
     description: Find security vulnerabilities, compliance issues, and infrastructure misconfigurations early in the development cycle of your infrastructure-as-code with KICS by Checkmarx
     version_constraint: "false"
     version_overrides:
+      # https://github.com/Checkmarx/kics/archive/refs/tags/v${SEM_VER  }.tar.gz
       - version_constraint: semver("<= 1.1.2")
         asset: kics_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: zip
@@ -992,7 +993,6 @@ packages:
         overrides:
           - goos: windows
             format: zip
-      # https://github.com/Checkmarx/kics/archive/refs/tags/v1.5.2.tar.gz
       - version_constraint: semver("<= 1.5.2")
         type: go_build
         asset: v{{trimV .Version}}
@@ -1006,6 +1006,19 @@ packages:
         overrides:
           - goos: windows
             format: zip
+      # - version_constraint: semver(">= 1.5.3")
+      #   type: go_build
+      #   asset: v{{trimV .Version}}
+      #   files:
+      #     - name: kics
+      #       src: .
+      #       dir: kics-{{trimV .Version}}/cmd/console
+      #   format: tar.gz
+      #   replacements:
+      #     amd64: x64
+      #   overrides:
+      #     - goos: windows
+      #       format: zip
       - version_constraint: "true"
         no_asset: true
   - type: github_release
