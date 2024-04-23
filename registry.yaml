@@ -955,10 +955,6 @@ packages:
         windows_arm_emulation: true
         replacements:
           amd64: x64
-        checksum:
-          type: github_release
-          asset: kics_{{trimV .Version}}_checksums.txt
-          algorithm: sha256
         overrides:
           - goos: linux
             format: tar.gz
@@ -972,10 +968,6 @@ packages:
         windows_arm_emulation: true
         replacements:
           amd64: x64
-        checksum:
-          type: github_release
-          asset: kics_{{trimV .Version}}_checksums.txt
-          algorithm: sha256
         overrides:
           - goos: windows
             format: zip
@@ -989,10 +981,6 @@ packages:
         windows_arm_emulation: true
         replacements:
           amd64: x64
-        checksum:
-          type: github_release
-          asset: kics_{{trimV .Version}}_checksums.txt
-          algorithm: sha256
         overrides:
           - goos: windows
             format: zip
@@ -1001,15 +989,11 @@ packages:
         format: tar.gz
         replacements:
           amd64: x64
-        checksum:
-          type: github_release
-          asset: kics_{{trimV .Version}}_checksums.txt
-          algorithm: sha256
         overrides:
           - goos: windows
             format: zip
-      # https://github.com/Checkmarx/kics/releases/v1.5.2
-      - version_constraint: semver("= 1.5.2")
+      # https://github.com/Checkmarx/kics/archive/refs/tags/v1.5.2.tar.gz
+      - version_constraint: semver("<= 1.5.2")
         type: go_build
         asset: v{{trimV .Version}}
         files:
